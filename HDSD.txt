@@ -1,0 +1,63 @@
+1. Chuẩn bị máy tính
+Máy tính chạy Windows 10 trở lên.
+Kết nối Internet ổn định.
+
+2. Cài đặt phần mềm cần thiết
+2.1 Cài đặt Node.js
+Node.js là phần mềm giúp chạy các ứng dụng viết bằng JavaScript trên máy tính.
+Truy cập trang chính thức để tải: https://nodejs.org/en/download/
+Chọn bản LTS (phiên bản ổn định) cho Windows, ví dụ: "Windows Installer (.msi)".
+Tải về và chạy file cài đặt.
+Trong quá trình cài đặt, chọn các tùy chọn mặc định, nhớ bật thêm "Add to PATH".
+
+Cài xong, mở Command Prompt (cmd) và gõ:
+node -v
+npm -v
+Nếu hiện ra phiên bản (ví dụ: v18.16.0) nghĩa là cài thành công.
+
+2.2 Cài đặt Git (nếu chưa có)
+Git dùng để tải code từ kho lưu trữ.
+Tải tại: https://git-scm.com/download/win
+Cài đặt với tùy chọn mặc định.
+
+3. Tải và chuẩn bị dự án 0g-auto
+Tải code từ Github (nếu dự án bạn có trên Github)
+Mở Command Prompt (CMD). Gõ lệnh:
+git clone https://github.com/soradaisuki/0g-auto.git
+Vào thư mục dự án:
+cd 0g-auto
+
+4. Cài đặt thư viện cần thiết
+Trong thư mục dự án, bạn cần cài các thư viện Node.js mà dự án sử dụng. Gõ lệnh:
+npm install
+Lệnh này sẽ tự động cài các thư viện cần thiết (ethers, node-fetch, solc, v.v).
+
+5. Chuẩn bị file private_key.txt
+Dự án cần file private_key.txt chứa các private key ví EVM mà người dùng muốn dùng chạy auto, mỗi key trên một dòng.
+Private key có định dạng: 0x + private key.
+Lưu ý không phải là địa chỉ ví.
+Ví dụ:
+0x123456789abcdef...
+0xabcdef123456789...
+Lưu ý:
+Không chia sẻ file này cho người khác vì chứa khóa riêng.
+Nếu chưa có, bạn có thể tạo ví Ethereum trên các nền tảng như Metamask, lấy private key từ đó.
+
+6. Chạy dự án
+Mở Command Prompt (CMD) và vào thư mục dự án (nếu chưa ở đó):
+cd 0g-auto
+Chạy tiếp lệnh:
+node main.js
+Chương trình sẽ khởi động và hiển thị như bên dưới:
+🔧 Chọn chức năng:
+1. Auto Swap
+2. Auto Deploy
+👉 Nhập (1 hoặc 2):
+Bạn nhập 1 để chạy tự động swap token, hoặc 2 để tự động deploy hợp đồng token.
+
+Nếu chọn 1, chương trình sẽ hỏi:
+⏲️ Nhập thời gian delay giữa các ví (giây):
+Bạn nhập số giây chờ (ví dụ: 60) rồi nhấn Enter.
+
+Quá trình sẽ tự động chạy, hiện thông báo trạng thái trên màn hình của Command Prompt (CMD). Done.
+
